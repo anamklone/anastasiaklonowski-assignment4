@@ -14,4 +14,27 @@
 (function() {
   // Magic!
   console.log('Keepin\'n it clean with an external script!');
+  
+  var data = null;
+  var interests = null;
+  var programming = null;
+  
+  $(window).on('load', function() {
+    $.getJSON("http://www.mattbowytz.com/simple_api.json?data=all", function(result) {
+      console.log(result);
+      if (result.code == 8 && result.status == 200) {
+        data = result.data;
+        console.log(data);
+        interests = data.interests;
+        programming = data.programming;
+        console.log(interests);
+        console.log(programming);
+      }
+    });
+  });
+  
+  $('.flexsearch-input').on('keyup', function() {
+    var input = $('.flexsearch-input').val();
+    console.log(input);
+  });
 })();
