@@ -96,3 +96,31 @@ input:-moz-placeholder {
   line-height: 45px;
   text-align: center;
 }
+
+#flexsearch-popup {
+  display: none;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: auto;
+  width: 100%;
+  padding: 0 46px 0 10px;
+  margin: 0px;
+  border-color: #333;
+  border-radius: 35px;
+  border-style: solid;
+  border-width: 5px;
+  color: #333;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 26px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+#flexsearch-popup > li {
+  list-style-type: none;
+}
+
+#flexsearch-popup > li > a {
+  
+}
