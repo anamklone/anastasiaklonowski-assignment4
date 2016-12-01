@@ -33,17 +33,26 @@
     $('#flexsearch-popup').html('');
     var input = $('.flexsearch-input').val();
     if (data != null && interests != null & programming != null) {
+      found = false;
       if (input.length > 0) {
+        $('#flexsearch-popup').show();
         for (i = 0; i < interests.length; i++) {
           if (interests[i].substring(0, input.length).toLowerCase() == input.toLowerCase()) {
-            $('#flexsearch-popup').append(interests[i] + '<br>');
+            $('#flexsearch-popup').append('<li><a href="http://google.com/#q=' + interests[i].toLowerCase().replace(' ', '+') + '" target="_blank">' + interests[i] + '</a></li>');
+            found = true;
           }
         }
         for (i = 0; i < programming.length; i++) {
           if (programming[i].substring(0, input.length).toLowerCase() == input.toLowerCase()) {
-            $('#flexsearch-popup').append(programming[i] + '<br>');
+            $('#flexsearch-popup').append('<li><a href="http://google.com/#q=' + programming[i].toLowerCase().replace(' ', '+') + '" target="_blank">' + programming[i] + '</a></li>');
+            found = true;
           }
         }
+      } else {
+        $('#flexsearch-popup').hide();
+      }
+      if (!found) {
+        $('#flexsearch-popup').hide();
       }
     }
   });
