@@ -34,17 +34,22 @@
   });
   
   $('.flexsearch-input').on('keyup', function() {
+    $('#flexsearch-popup').html('');
     var input = $('.flexsearch-input').val();
     console.log(input);
     if (data != null && interests != null & programming != null) {
-      for (i = 0; i < interests.length; i++) {
-        if (interests[i].substring(0, input.length).toLowerCase() == input.toLowerCase()) {
-          console.log(interests[i]);
+      if (input.length > 0) {
+        for (i = 0; i < interests.length; i++) {
+          if (interests[i].substring(0, input.length).toLowerCase() == input.toLowerCase()) {
+            console.log(interests[i]);
+            $('#flexsearch-popup').append(interests[i] + '<br>');
+          }
         }
-      }
-      for (i = 0; i < programming.length; i++) {
-        if (programming[i].substring(0, input.length).toLowerCase() == input.toLowerCase()) {
-          console.log(programming[i]);
+        for (i = 0; i < programming.length; i++) {
+          if (programming[i].substring(0, input.length).toLowerCase() == input.toLowerCase()) {
+            console.log(programming[i]);
+            $('#flexsearch-popup').append(programming[i] + '<br>');
+          }
         }
       }
     }
