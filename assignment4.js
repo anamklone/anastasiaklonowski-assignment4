@@ -36,5 +36,17 @@
   $('.flexsearch-input').on('keyup', function() {
     var input = $('.flexsearch-input').val();
     console.log(input);
+    if (data != null && interests != null & programming != null) {
+      for (i = 0; i < interests.length; i++) {
+        if (interests[i].substring(0, input.length).toLowerCase() == input.toLowerCase()) {
+          console.log(interests[i]);
+        }
+      }
+      for (i = 0; i < programming.length; i++) {
+        if (programming[i].substring(0, input.length).toLowerCase() == input.toLowerCase()) {
+          console.log(programming[i]);
+        }
+      }
+    }
   });
 })();
