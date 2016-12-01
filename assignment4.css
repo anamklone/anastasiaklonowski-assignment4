@@ -104,7 +104,7 @@ input:-moz-placeholder {
   box-sizing: content-box;
   height: auto;
   width: 100%;
-  padding: 0 46px 0 10px;
+  padding: 15px 46px 15px 10px;
   margin: 0px;
   border-color: #333;
   border-radius: 35px;
@@ -119,8 +119,15 @@ input:-moz-placeholder {
 
 #flexsearch-popup > li {
   list-style-type: none;
+  padding: 5px;
 }
 
 #flexsearch-popup > li > a {
-  
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+
+#flexsearch-popup > li > a:hover {
+  color: #888;
 }
